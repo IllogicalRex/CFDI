@@ -23,22 +23,6 @@ namespace CFDI.DO
             return _cfdiDAO.GetById(ide_id);
         }
 
-        // POST Agregar
-        public string post(CFDIDataDTO data)
-        {
-            return _cfdiDAO.post(data);
-        }
-
-        // PUT Actualizar
-        public string put(string ide_id, CFDIDataDTO data)
-        {
-            return _cfdiDAO.put(ide_id, data);
-        }
-
-        // DELETE Eliminar
-        //public string delete(string ide_id)
-        //{
-        //    return _cfdiDAO.delete(ide_id);
-        //}
+        
     }
 }

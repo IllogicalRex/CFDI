@@ -22,24 +22,5 @@ namespace CFDI.Manager
         {
             return _cfdiDO.GetById(ide_id);
         }
-
-
-        // POST Agregar
-        public string post(CFDIDataDTO data)
-        {
-            return _cfdiDO.post(data);
-        }
-
-        // PUT Actualizar
-        public string put(string ide_id, CFDIDataDTO data)
-        {
-            return _cfdiDO.put(ide_id, data);
-        }
-
-        // DELETE Elimiar
-        //public string delete(string ide_id)
-        //{
-        //    return _cfdiDO.delete(ide_id);
-        //}
     }
 }

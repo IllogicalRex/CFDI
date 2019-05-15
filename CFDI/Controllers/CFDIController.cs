@@ -30,33 +30,5 @@ namespace CFDI.Controllers
             CFDICodeDataDTO cfdi = _cfdiMgr.GetById(ide_id);
             return cfdi;
         }
-
-
-
-        //Post api/cfdi Agregar 
-        [HttpPost]
-        public ActionResult<string> post([FromBody] CFDIDataDTO data)
-        {
-
-
-
-            return _cfdiMgr.post(data);
-        }
-
-        //PUT api/cfdi Actualizar
-        [HttpPut("{ide_id}")]
-        public ActionResult<string> put(string ide_id, [FromBody] CFDIDataDTO data)
-        {
-            return _cfdiMgr.put(ide_id,data);
-        }
-
-        //DELETE api/cfdi Elimiar
-        //[HttpDelete("{ide_id}")]
-        //public ActionResult<string> delete(string ide_id)
-        //{
-        //    return _cfdiMgr.delete(ide_id);
-        //}
-
-
     }
 }

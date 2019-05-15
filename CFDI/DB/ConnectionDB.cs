@@ -31,7 +31,7 @@ namespace CFDI.DB
            
             List <CFDIDataDTO> data = _cfdiData.Find(response => true).ToList();
             
-            CFDICodeDataDTO respCode = Validar(data);
+            CFDICodeDataDTO respCode = Validar(data,1);
             return respCode; 
         }
         
@@ -40,62 +40,35 @@ namespace CFDI.DB
         {
             List<CFDIDataDTO> data = _cfdiData.Find(response => response.ide_id.Equals(ide_id)).ToList();
 
-            CFDICodeDataDTO respCode = Validar(data);
+            CFDICodeDataDTO respCode = Validar(data,2);
             return respCode;
         }
 
-        // POST Agregar
-        public string post(CFDIDataDTO data)
-        {
-            this.data = data;
-            string mensaje = "";
-            if (!isNull())
-            {
-                _cfdiData.InsertOneAsync(data);
-                mensaje = "Operación realizada correctamente";
-            }
-            else
-                mensaje = "No puede mandar datos vacios";
-
-            return mensaje;
-        }
-
-        // PUT Actualizar 
-        public string put(string ide_id, CFDIDataDTO data)
-        {
-            try
-            {
-                _cfdiData.ReplaceOneAsync(res => res.ide_id.Equals(ide_id) , data);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            return "Se actualizo";
-        }
-
-        // DELETE Eiminar
-        //public string delete(string ide_id)
-        //{
-        //    _cfdi.DeleteOneAsync(res => res.ide_id.Equals(ide_id));
-        //    return "Se elimino";
-        //}
-        public CFDICodeDataDTO Validar(List<CFDIDataDTO> data)
+       //si type es 1 es get, si es 2 es get por filtro
+        public CFDICodeDataDTO Validar(List<CFDIDataDTO> data, int type)
         {
             string code;
             string message;
             string level;
-            string description = "";
-            string moreInfo;
+            string description = "Realización de consultas CFDI";
+            string moreInfo = "http://mesa.ayuda.com/7";
             bool ok = false;
             string validations;
-            if (data != null)
+            if (data.Count>0)
             {
+
                 code = "";
-                message = "Opercion realizada correctamente";
+                message = "Operación realizada correctamente ";
                 level = "SUCCESS";
-                description = "Realización de todas las consultas CFDI";
-                moreInfo = "http://mesa.ayuda.com/7";
+                ok = true;
+                validations = "[]";
+            }
+            else if (data.Count==0)
+            {
+
+                code = "";
+                message = "No se encotraron resultados";
+                level = "SUCCESS";
                 ok = true;
                 validations = "[]";
             }
@@ -104,32 +77,14 @@ namespace CFDI.DB
                 code = "";
                 message = "Opercion no se pudo realizar";
                 level = "FAILURE";
-                moreInfo = "http://mesa.ayuda.com/7";
                 ok = false;
                 validations = "[]";
             }
+
+            
             return responseCode(code, message, level, description, moreInfo, data, ok, validations);
         }
-        public bool isNull()
-        {
-            bool isNull = false;
-            if (data.ide_id == null ||
-                data.cve_fol_interno==null||
-                data.cve_fol_sat == null||
-                data.tpo_documento == null||
-                data.bnd_estatus == null||
-                data.txt_rfc_emisor == null||
-                data.txt_rfc_receptor == null||
-                data.fec_cancelar == null||
-                data.fec_emision == null||
-                data.mto_subtotal == null||
-                data.imp_iva == null||
-                data.mto_total == null)
-            {
-                isNull= true;
-            }
-            return isNull;
-        }
+        
 
         public CFDICodeDataDTO responseCode(string code, string message, string level, string description, string moreInfo, List<CFDIDataDTO> response, bool ok, string validations)
         {
