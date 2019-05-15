@@ -1,0 +1,14 @@
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\obj\Debug\netcoreapp2.2\CFDI.csprojAssemblyReference.cache
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\obj\Debug\netcoreapp2.2\CFDI.csproj.CoreCompileInputs.cache
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\obj\Debug\netcoreapp2.2\CFDI.RazorAssemblyInfo.cache
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\obj\Debug\netcoreapp2.2\CFDI.RazorAssemblyInfo.cs
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\obj\Debug\netcoreapp2.2\CFDI.AssemblyInfoInputs.cache
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\obj\Debug\netcoreapp2.2\CFDI.AssemblyInfo.cs
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\bin\Debug\netcoreapp2.2\CFDI.deps.json
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\bin\Debug\netcoreapp2.2\CFDI.runtimeconfig.json
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\bin\Debug\netcoreapp2.2\CFDI.runtimeconfig.dev.json
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\bin\Debug\netcoreapp2.2\CFDI.dll
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\bin\Debug\netcoreapp2.2\CFDI.pdb
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\obj\Debug\netcoreapp2.2\CFDI.RazorTargetAssemblyInfo.cache
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\obj\Debug\netcoreapp2.2\CFDI.dll
+C:\Users\e-javelazquez\source\repos\CFDI\CFDI\obj\Debug\netcoreapp2.2\CFDI.pdb
